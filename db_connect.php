@@ -1,5 +1,5 @@
 <?php
-include "credentials.php"; // Ensure this path is correct
+include "credentials.php"; // Ensure this path is correct bozo!!
 
 // Database connection
 $conn = new mysqli('localhost', $user, $pw, 'a30003409_database');
