@@ -1,0 +1,276 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Courier New", Courier, monospace;
+  background-color: #a9957b;
+  background-image: url("/images/Folder2.webp");
+  padding: 20px; /* Reduced padding to fit better across devices */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  color: white; /* Default text color to better contrasts with backgrounds */
+}
+
+/* Container */
+/* Ensure the container grows to fit its contents, including the image */
+.container {
+  width: 90%; /* Set a responsive width */
+  max-width: 1350px;
+  margin: 0 auto;
+  background-color: black;
+  padding: 30px;
+  border: 2px solid #333;
+  border-radius: 5px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+  position: relative; /* Make sure stamps are positioned relative to the container */
+}
+
+/* The header will contain the image and header text */
+.header {
+  text-align: left; /* Align header text to the left */
+  margin-bottom: 20px;
+}
+
+/* Image should be a block element that pushes the header down */
+.header img {
+  display: block; /* Makes the image take its own line */
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+.header img,
+.container img,
+.section img {
+  /* Apply to images inside sections */
+  width: 800px;
+  height: 460px;
+  object-fit: cover; /* This ensures the image maintains its aspect ratio and fills the area */
+  display: block; /* Ensures the image takes up its own block line */
+  margin-bottom: 20px;
+}
+/* Navigation Bar */
+.navbar {
+  background-color: transparent;
+  padding: 10px 0;
+  text-align: center;
+  border-bottom: 2px solid #b30000;
+  margin-bottom: 20px;
+}
+
+.nav-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+.nav-item {
+  display: inline-block; /* Use block to allow better scaling */
+  margin: 0 10px; /* Adjust margin to fit smaller screens */
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: #b30000;
+  font-size: 16px; /* Reduced font size for better scaling */
+  font-weight: bold;
+  padding: 8px 12px; /* Adjusted padding */
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-item a:hover {
+  background-color: #b30000;
+  color: #fff;
+}
+
+.header h1,
+.header h2 {
+  margin-right: 270px; /* Adjusted margin for image */
+}
+
+.header h1 {
+  font-size: 40px; /* Adjusted for better scaling */
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.header2 h1 {
+  font-size: 40px; /* Adjusted for better scaling */
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.header h2 {
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+.header2 h2 {
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+
+/* Content sections */
+.section {
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: 16px; /* Adjusted for better scaling */
+  text-transform: uppercase;
+  font-weight: bold;
+  border-bottom: 1px solid #333;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+}
+
+.section p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.section img {
+  max-width: 100%;
+  border: 2px solid #333;
+  margin-top: 10px;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.footer .subject-id {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.footer img {
+  max-width: 350px;
+  margin-top: 10px;
+}
+
+.footer .contact-info {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Clipboard styling */
+.clipboard {
+  padding: 20px;
+  background: #e5e5e5;
+  border: 2px solid #999;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+  color: #333; /* Ensure text color is visible */
+}
+
+/* Top secret and confidential stamps */
+.top-secret-stamp,
+.confidential-stamp {
+  position: absolute;
+  font-size: 40px;
+  font-weight: bold;
+  color: #b30000;
+  border: 2px solid #b30000;
+  padding: 3px 7px;
+  transform: rotate(-15deg);
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 10; /* Make sure the stamps are always on top of the content */
+}
+
+.top-secret-stamp {
+  top: 420px;
+  right: 269px;
+}
+
+.confidential-stamp {
+  top: 520px;
+  left: 600px;
+}
+
+/* Expunged text styling */
+.expunged {
+  position: relative;
+  color: transparent; /* Make the text itself invisible */
+  background-color: transparent; /* Transparent background */
+}
+
+.expunged::before {
+  content: "[DATA EXPUNGED]";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black; /* Black bar effect */
+  color: white; /* Use white color for text under the bar */
+  padding: 2px 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .header img {
+    max-width: 200px; /* Adjust image size for tablets/smaller screens */
+  }
+
+  .header h1,
+  .header h2 {
+    margin-right: 220px; /* Adjust spacing for smaller screens */
+  }
+
+  .nav-item {
+    margin: 0 5px; /* Reduce margin for better fit */
+  }
+
+  .nav-item a {
+    font-size: 14px; /* Smaller font size for navigation */
+    padding: 6px 10px;
+  }
+
+  .top-secret-stamp,
+  .confidential-stamp {
+    font-size: 18px; /* Adjust font size */
+    padding: 2px 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header img {
+    max-width: 150px; /* Further adjust image size for phones */
+  }
+
+  .header h1,
+  .header h2 {
+    margin-right: 180px; /* Adjust spacing for phones */
+  }
+
+  .nav-item a {
+    font-size: 12px; /* Smaller font size for very small screens */
+    padding: 4px 8px;
+  }
+
+  .top-secret-stamp,
+  .confidential-stamp {
+    font-size: 16px; /* Adjust stamp size for phones */
+    padding: 2px 4px;
+  }
+
+  .container {
+    padding: 15px; /* Reduce padding for smaller screens */
+  }
+
+  .footer img {
+    max-width: 80px; /* Smaller footer image */
+  }
+
+  .footer .subject-id {
+    font-size: 14px;
+  }
+}
